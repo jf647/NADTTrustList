@@ -1,0 +1,11 @@
+## Interface: 42000
+## Title: NADTTrustList
+## Author: Karatheya <addons@nadt.net>
+## Version: 1.0.1
+## Notes: Maintain Multibox Party Trust Relationships
+## SavedVariablesPerCharacter: NTL_DB
+## OptionalDeps: Ace3
+
+embeds.xml
+
+Core.lua
