@@ -11,18 +11,20 @@ function NTL:IsGroupTrusted()
 
 	local grouptrusted = false
 
-	if GetNumRaidMembers() > 0 then
-		for i = 1, GetNumRaidMembers() do
-			local name = UnitName("raid"..i, true)
-			if not self:IsUnitTrusted(name) then
-				return false
+	if GetNumGroupMembers() > 0 then
+		if IsInRaid then
+			for i = 1, GetNumGroupMembers() do
+				local name = UnitName("raid"..i, true)
+				if not self:IsUnitTrusted(name) then
+					return false
+				end
 			end
-		end
-	elseif GetNumPartyMembers() > 0 then
-		for i = 1, GetNumPartyMembers() do
-			local name = UnitName("party"..i, true)
-			if not self:IsUnitTrusted(name) then
-				return false
+		else
+			for i = 1, GetNumGroupMembers() do
+				local name = UnitName("party"..i, true)
+				if not self:IsUnitTrusted(name) then
+					return false
+				end
 			end
 		end
 	end
